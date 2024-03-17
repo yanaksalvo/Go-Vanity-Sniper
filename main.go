@@ -51,8 +51,8 @@ func handleMessages() {
 			guildID := data["d"].(map[string]interface{})["guild_id"].(string)
 			guild, ok := guilds[guildID]
 			if ok {
-				patchURL := "https://discordapp.com/api/v8/guilds/GUILDID/vanity-url"
-				postURL := "https://discordapp.com/api/v8/channels/CHANNELID/messages"
+				patchURL := "https://canary.discord.com/api/v8/guilds/GUILDID/vanity-url"
+				postURL := "https://canary.discord.com/api/v8/channels/CHANNELID/messages"
 				patchData := map[string]string{"code": guild}
 
 				patchResponse, err := patchDataToDiscordAPI(patchURL, patchData)
